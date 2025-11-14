@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import "@megazord-ui/ui/styles.css";
+@import "tailwindcss";
 
 /* Configure Tailwind to scan files for utility classes */
 @source "../**/*.{js,ts,jsx,tsx,mdx}";
