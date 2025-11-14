@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
+import { RootProvider } from 'fumadocs-ui/provider';
+import { Inter } from 'next/font/google';
+import type { ReactNode } from 'react';
 import "./globals.css";
-import { Navigation } from "@/components/navigation";
+
+const inter = Inter({
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
-  title: "Megazord UI - Component Playground",
-  description: "Documentation and examples for Megazord UI components",
+  title: "Megazord UI",
+  description: "A React UI component library built with TailwindCSS v4",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: ReactNode;
+}) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        <Navigation />
-        {children}
+    <html lang="en" className={inter.className} suppressHydrationWarning>
+      <body>
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   );

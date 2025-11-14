@@ -1,0 +1,115 @@
+---
+title: Button
+description: A versatile button component with multiple variants and sizes based on shadcn/ui design.
+---
+
+import { Button } from '@megazord-ui/ui';
+
+## Installation
+
+```bash
+npm install @megazord-ui/ui
+```
+
+## Usage
+
+```tsx
+import { Button } from '@megazord-ui/ui';
+
+export default function MyComponent() {
+  return <Button>Click me</Button>;
+}
+```
+
+## Examples
+
+### Default
+
+<div className="flex gap-4 p-6 border rounded-lg bg-card my-4">
+  <Button>Default Button</Button>
+</div>
+
+```tsx
+<Button>Default Button</Button>
+```
+
+### Variants
+
+<div className="space-y-4 p-6 border rounded-lg bg-card my-4">
+  <div className="flex gap-4">
+    <Button variant="default">Default</Button>
+    <Button variant="destructive">Destructive</Button>
+    <Button variant="outline">Outline</Button>
+  </div>
+  <div className="flex gap-4">
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="ghost">Ghost</Button>
+    <Button variant="link">Link</Button>
+  </div>
+</div>
+
+```tsx
+<Button variant="default">Default</Button>
+<Button variant="destructive">Destructive</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+```
+
+### Sizes
+
+<div className="flex gap-4 items-center p-6 border rounded-lg bg-card my-4">
+  <Button size="sm">Small</Button>
+  <Button size="default">Default</Button>
+  <Button size="lg">Large</Button>
+  <Button size="icon">📦</Button>
+</div>
+
+```tsx
+<Button size="sm">Small</Button>
+<Button size="default">Default</Button>
+<Button size="lg">Large</Button>
+<Button size="icon">📦</Button>
+```
+
+### Disabled
+
+<div className="flex gap-4 p-6 border rounded-lg bg-card my-4">
+  <Button disabled>Disabled Button</Button>
+  <Button variant="outline" disabled>Disabled Outline</Button>
+</div>
+
+```tsx
+<Button disabled>Disabled Button</Button>
+<Button variant="outline" disabled>Disabled Outline</Button>
+```
+
+## API Reference
+
+### Props
+
+The Button component extends all standard HTML button attributes and includes:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"` | The visual style variant |
+| `size` | `"default" \| "sm" \| "lg" \| "icon"` | `"default"` | The size of the button |
+| `asChild` | `boolean` | `false` | Render as child component |
+| `className` | `string` | - | Additional CSS classes |
+
+### Variants
+
+- **default**: Primary button style with solid background
+- **destructive**: For destructive actions (delete, remove, etc.)
+- **outline**: Button with border and transparent background
+- **secondary**: Secondary button style
+- **ghost**: Transparent button with hover effect
+- **link**: Link-styled button with underline
+
+### Sizes
+
+- **default**: Standard button size (h-10)
+- **sm**: Small button size (h-9)
+- **lg**: Large button size (h-11)
+- **icon**: Square button for icons (h-10 w-10)

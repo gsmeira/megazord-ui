@@ -9,11 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@mdx-js/loader": "^3.0.0",
-    "@mdx-js/react": "^3.0.0",
     "@megazord-ui/ui": "*",
-    "@next/mdx": "^16.0.1",
-    "@types/mdx": "^2.0.10",
+    "fumadocs-core": "^15.1.1",
+    "fumadocs-mdx": "^11.1.1",
+    "fumadocs-ui": "^15.1.1",
+    "lucide-react": "^0.468.0",
     "next": "16.0.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"

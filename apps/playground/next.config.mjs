@@ -1,13 +1,11 @@
-import createMDX from '@next/mdx';
+import { createMDX } from 'fumadocs-mdx/next';
+
+const withMDX = createMDX();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  reactStrictMode: true,
   transpilePackages: ['@megazord-ui/ui'],
 };
-
-const withMDX = createMDX({
-  extension: /\.mdx?$/,
-});
 
 export default withMDX(nextConfig);
