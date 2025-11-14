@@ -1,4 +1,5 @@
 import { Button } from '@megazord-ui/ui';
+import { Table, TableHead, TableRow, TableHeader, TableCell, TableBody } from '../../../components/mdx-table';
 
 # Button
 
@@ -90,44 +91,42 @@ export default function MyComponent() {
 
 The Button component extends all standard HTML button attributes and includes:
 
-<div className="my-6 w-full overflow-x-auto">
-  <table className="w-full border-collapse">
-    <thead className="bg-muted">
-      <tr className="border-b border-border">
-        <th className="px-4 py-2 text-left font-semibold">Prop</th>
-        <th className="px-4 py-2 text-left font-semibold">Type</th>
-        <th className="px-4 py-2 text-left font-semibold">Default</th>
-        <th className="px-4 py-2 text-left font-semibold">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr className="border-b border-border">
-        <td className="px-4 py-2"><code>variant</code></td>
-        <td className="px-4 py-2"><code>"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"</code></td>
-        <td className="px-4 py-2"><code>"default"</code></td>
-        <td className="px-4 py-2">The visual style variant</td>
-      </tr>
-      <tr className="border-b border-border">
-        <td className="px-4 py-2"><code>size</code></td>
-        <td className="px-4 py-2"><code>"default" | "sm" | "lg" | "icon"</code></td>
-        <td className="px-4 py-2"><code>"default"</code></td>
-        <td className="px-4 py-2">The size of the button</td>
-      </tr>
-      <tr className="border-b border-border">
-        <td className="px-4 py-2"><code>asChild</code></td>
-        <td className="px-4 py-2"><code>boolean</code></td>
-        <td className="px-4 py-2"><code>false</code></td>
-        <td className="px-4 py-2">Render as child component</td>
-      </tr>
-      <tr className="border-b border-border">
-        <td className="px-4 py-2"><code>className</code></td>
-        <td className="px-4 py-2"><code>string</code></td>
-        <td className="px-4 py-2">-</td>
-        <td className="px-4 py-2">Additional CSS classes</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableHeader>Prop</TableHeader>
+      <TableHeader>Type</TableHeader>
+      <TableHeader>Default</TableHeader>
+      <TableHeader>Description</TableHeader>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>`variant`</TableCell>
+      <TableCell>`"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"`</TableCell>
+      <TableCell>`"default"`</TableCell>
+      <TableCell>The visual style variant</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`size`</TableCell>
+      <TableCell>`"default" | "sm" | "lg" | "icon"`</TableCell>
+      <TableCell>`"default"`</TableCell>
+      <TableCell>The size of the button</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`asChild`</TableCell>
+      <TableCell>`boolean`</TableCell>
+      <TableCell>`false`</TableCell>
+      <TableCell>Render as child component</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`className`</TableCell>
+      <TableCell>`string`</TableCell>
+      <TableCell>-</TableCell>
+      <TableCell>Additional CSS classes</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 
 ### Variants
 
