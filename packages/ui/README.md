@@ -85,4 +85,18 @@ npm run build
 
 # Lint
 npm run lint
+
+# Storybook
+npm run storybook          # Start Storybook dev server
+npm run build-storybook    # Build static Storybook
 ```
+
+## Storybook
+
+Interactive component documentation is available via Storybook. Run `npm run storybook` to explore components with live examples, interactive controls, and auto-generated documentation.
+
+Visit http://localhost:6006 after starting Storybook to see:
+- Component variations and examples
+- Interactive prop controls
+- Auto-generated documentation
+- Code snippets
