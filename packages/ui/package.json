@@ -21,6 +21,8 @@
     "build": "tsc && vite build",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
