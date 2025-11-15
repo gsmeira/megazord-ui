@@ -219,16 +219,25 @@ This tells Tailwind to scan for utility classes in both locations.
 pnpm --filter @megazord-ui/ui build
 ```
 
-### Issue: Module not found errors
+### Issue: Module not found errors or dependency issues
 
-**Solution:** Reinstall dependencies:
+**Solution:** Use the fresh install command to clean and reinstall all dependencies:
 
 ```bash
-rm -rf node_modules package-lock.json
-rm -rf packages/*/node_modules
-rm -rf apps/*/node_modules
-npm install
-npm run build --workspace=@megazord-ui/ui
+pnpm fresh
+```
+
+This command will:
+1. Remove `pnpm-lock.yaml`
+2. Remove root `node_modules` folder
+3. Remove `node_modules` from all packages (`packages/*/node_modules`)
+4. Remove `node_modules` from all apps (`apps/*/node_modules`)
+5. Reinstall all dependencies with a fresh lock file
+
+After running `pnpm fresh`, remember to rebuild the UI package:
+
+```bash
+pnpm --filter @megazord-ui/ui build
 ```
 
 ## Architecture Notes

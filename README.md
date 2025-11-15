@@ -92,6 +92,9 @@ pnpm dev
 
 # Start Storybook
 pnpm storybook
+
+# Clean install (removes lockfile and node_modules, then reinstalls)
+pnpm fresh
 ```
 
 ### Project Structure
