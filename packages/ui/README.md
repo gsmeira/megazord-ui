@@ -74,26 +74,29 @@ The library uses CSS variables for theming. You can customize the theme by overr
 ## Development
 
 ```bash
-# Install dependencies
-npm install
+# Install dependencies (from monorepo root)
+pnpm install
 
 # Run tests
-npm test
+pnpm test
 
 # Build
-npm run build
+pnpm build
+
+# Build in watch mode
+pnpm dev
 
 # Lint
-npm run lint
+pnpm lint
 
 # Storybook
-npm run storybook          # Start Storybook dev server
-npm run build-storybook    # Build static Storybook
+pnpm storybook          # Start Storybook dev server
+pnpm build-storybook    # Build static Storybook
 ```
 
 ## Storybook
 
-Interactive component documentation is available via Storybook. Run `npm run storybook` to explore components with live examples, interactive controls, and auto-generated documentation.
+Interactive component documentation is available via Storybook. Run `pnpm storybook` to explore components with live examples, interactive controls, and auto-generated documentation.
 
 Visit http://localhost:6006 after starting Storybook to see:
 - Component variations and examples

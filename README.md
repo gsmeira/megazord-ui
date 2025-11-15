@@ -24,7 +24,11 @@ This monorepo contains:
 ### Installation
 
 ```bash
+pnpm add @megazord-ui/ui
+# or
 npm install @megazord-ui/ui
+# or
+yarn add @megazord-ui/ui
 ```
 
 ### Usage
@@ -45,7 +49,7 @@ function App() {
 ### Prerequisites
 
 - Node.js >= 18.0.0
-- npm
+- pnpm >= 8.0.0
 
 ### Quick Start (Running Locally)
 
@@ -55,13 +59,13 @@ git clone https://github.com/gsmeira/megazord-ui.git
 cd megazord-ui
 
 # 2. Install dependencies
-npm install
+pnpm install
 
 # 3. Build the UI package (REQUIRED before running playground)
-npm run build --workspace=@megazord-ui/ui
+pnpm --filter @megazord-ui/ui build
 
 # 4. Start the playground development server
-npm run dev
+pnpm dev
 ```
 
 **Important:** You must build the UI package before running the playground app, otherwise you'll see errors like `Can't resolve '@megazord-ui/ui/styles.css'`.
@@ -72,19 +76,22 @@ For detailed development instructions, troubleshooting, and workflows, see the [
 
 ```bash
 # Build all packages
-npm run build
+pnpm build
 
 # Run tests
-npm test
+pnpm test
 
 # Run linting
-npm run lint
+pnpm lint
 
 # Format code
-npm run format
+pnpm format
 
 # Start playground (after building UI package)
-npm run dev
+pnpm dev
+
+# Start Storybook
+pnpm storybook
 ```
 
 ### Project Structure
@@ -135,10 +142,10 @@ Tests are written using Vitest and React Testing Library:
 
 ```bash
 # Run tests
-npm test
+pnpm test
 
-# Watch mode
-npm run test:watch
+# Watch mode in UI package
+pnpm --filter @megazord-ui/ui test:watch
 ```
 
 ## 📖 Documentation
@@ -146,7 +153,7 @@ npm run test:watch
 Visit the playground app to see live examples and documentation:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser.

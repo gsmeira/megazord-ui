@@ -7,7 +7,8 @@ This guide provides step-by-step instructions for setting up and running the Meg
 Before you begin, ensure you have the following installed:
 
 - **Node.js** >= 18.0.0 (verify with `node --version`)
-- **npm** >= 9.0.0 (verify with `npm --version`)
+- **pnpm** >= 8.0.0 (verify with `pnpm --version`)
+  - Install pnpm: `npm install -g pnpm` or visit [pnpm.io](https://pnpm.io/installation)
 
 ## Initial Setup
 
@@ -25,7 +26,7 @@ cd megazord-ui
 Install dependencies for all packages in the monorepo:
 
 ```bash
-npm install
+pnpm install
 ```
 
 This will install dependencies for:
@@ -33,19 +34,21 @@ This will install dependencies for:
 - `packages/ui` (the UI component library)
 - `apps/playground` (the Next.js documentation app)
 
+pnpm uses a content-addressable storage system, which means packages are stored once globally and linked to projects, saving disk space.
+
 ### 3. Build the UI Package
 
 **Important:** You must build the UI package before running the playground app.
 
 ```bash
-npm run build --workspace=@megazord-ui/ui
+pnpm --filter @megazord-ui/ui build
 ```
 
 Or use the shorthand:
 
 ```bash
 cd packages/ui
-npm run build
+pnpm build
 cd ../..
 ```
 
@@ -67,7 +70,7 @@ Can't resolve '@megazord-ui/ui/styles.css'
 Now you can start the Next.js playground app:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 This will:
@@ -84,16 +87,16 @@ When you make changes to components in `packages/ui/src`:
 
 1. **Rebuild the package:**
    ```bash
-   npm run build --workspace=@megazord-ui/ui
+   pnpm --filter @megazord-ui/ui build
    ```
 
-2. **Restart the playground dev server** (Ctrl+C, then `npm run dev`)
+2. **Restart the playground dev server** (Ctrl+C, then `pnpm dev`)
 
 Alternatively, you can use watch mode for automatic rebuilding:
 
 ```bash
 cd packages/ui
-npm run dev
+pnpm dev
 ```
 
 This runs Vite in watch mode, automatically rebuilding when source files change.
@@ -110,61 +113,67 @@ Run from the repository root:
 
 ```bash
 # Install all dependencies
-npm install
+pnpm install
 
 # Build all packages
-npm run build
+pnpm build
 
 # Run tests for all packages
-npm test
+pnpm test
 
 # Lint all packages
-npm run lint
+pnpm lint
 
 # Format all code
-npm run format
+pnpm format
 
 # Start playground dev server
-npm run dev
+pnpm dev
+
+# Start Storybook
+pnpm storybook
 ```
 
 ### UI Package (`packages/ui`)
 
-Run from `packages/ui` directory:
+Run from `packages/ui` directory or use filters:
 
 ```bash
 # Build the library
-npm run build
+pnpm --filter @megazord-ui/ui build
 
 # Build in watch mode (auto-rebuild on changes)
-npm run dev
+pnpm --filter @megazord-ui/ui dev
 
 # Run tests
-npm test
+pnpm --filter @megazord-ui/ui test
 
 # Run tests in watch mode
-npm run test:watch
+pnpm --filter @megazord-ui/ui test:watch
+
+# Start Storybook
+pnpm --filter @megazord-ui/ui storybook
 
 # Lint the code
-npm run lint
+pnpm --filter @megazord-ui/ui lint
 ```
 
 ### Playground App (`apps/playground`)
 
-Run from `apps/playground` directory:
+Run from `apps/playground` directory or use filters:
 
 ```bash
 # Start development server
-npm run dev
+pnpm --filter playground dev
 
 # Build for production
-npm run build
+pnpm --filter playground build
 
 # Start production server
-npm start
+pnpm --filter playground start
 
 # Lint the code
-npm run lint
+pnpm --filter playground lint
 ```
 
 ## Common Issues
@@ -174,7 +183,7 @@ npm run lint
 **Solution:** Build the UI package first:
 
 ```bash
-npm run build --workspace=@megazord-ui/ui
+pnpm --filter @megazord-ui/ui build
 ```
 
 ### Issue: Changes to UI components not appearing
@@ -182,7 +191,7 @@ npm run build --workspace=@megazord-ui/ui
 **Solution:** Rebuild the UI package after making changes:
 
 ```bash
-npm run build --workspace=@megazord-ui/ui
+pnpm --filter @megazord-ui/ui build
 # Then restart the dev server
 ```
 
@@ -207,7 +216,7 @@ This tells Tailwind to scan for utility classes in both locations.
 **Solution:** Ensure the UI package is built, as it generates TypeScript declaration files:
 
 ```bash
-npm run build --workspace=@megazord-ui/ui
+pnpm --filter @megazord-ui/ui build
 ```
 
 ### Issue: Module not found errors
