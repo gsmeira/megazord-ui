@@ -26,6 +26,7 @@ This will create a `storybook-static` directory that can be deployed.
 
 - `main.ts` - Main Storybook configuration
 - `preview.ts` - Preview configuration and global decorators
+- `preview.css` - Imports TailwindCSS and component styles for Storybook
 
 ## Writing Stories
 
@@ -56,9 +57,24 @@ export const Default: Story = {
 };
 ```
 
+## Styling
+
+Storybook is configured to include both TailwindCSS and the UI package theme through `preview.css`:
+
+```css
+@import "tailwindcss";
+@import "../src/styles.css";
+```
+
+This ensures:
+- All TailwindCSS utility classes are available
+- Component theme variables are properly loaded
+- Dark mode support works correctly
+
 ## Features
 
 - **Auto-generated documentation**: Using the `autodocs` tag
 - **Interactive controls**: Modify props in real-time
-- **TailwindCSS support**: Full styling support via preview.ts
+- **TailwindCSS v4 support**: Full styling support with all utility classes
 - **TypeScript**: Full type safety
+- **Theme support**: CSS variables and dark mode
