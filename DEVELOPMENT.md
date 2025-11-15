@@ -451,6 +451,25 @@ This removes all lockfiles, node_modules, and build artifacts, then reinstalls e
 pnpm --filter @megazord-ui/ui build
 ```
 
+### pnpm Can't Find @megazord-ui/ui Package
+
+If you see an error like:
+
+```
+ERR_PNPM_FETCH_404  GET https://registry.npmjs.org/@megazord-ui%2Fui: Not Found - 404
+```
+
+This means pnpm is trying to fetch the package from npm registry instead of using the local workspace. This is fixed by using the `workspace:*` protocol in dependencies.
+
+**The fix is already applied** - the playground's `package.json` uses `"@megazord-ui/ui": "workspace:*"` to tell pnpm this is a local workspace package.
+
+If you encounter this error:
+1. Verify the dependency uses `workspace:*` protocol
+2. Run `pnpm install` to regenerate the lockfile
+3. The package should now resolve from the local workspace
+
+**Note:** This is why we use `workspace:*` instead of `*` or version numbers for local packages in pnpm workspaces.
+
 ## Getting Help
 
 - Check the [README](./README.md) for project overview
