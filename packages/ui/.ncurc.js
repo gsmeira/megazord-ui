@@ -7,9 +7,6 @@ module.exports = {
     @returns       True if the package should be excluded, false if it should be included.
   */
   reject: (name, semver) => {
-    if (name.includes('storybook')) {
-      return true
-    }
-    return false
+    return !!name.includes('storybook');
   }
 }
