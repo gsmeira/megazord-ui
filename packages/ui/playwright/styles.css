@@ -1,5 +1,5 @@
-/* Component theme styles */
 @import "../src/styles.css";
 
-/* Import TailwindCSS v4 */
 @import "tailwindcss";
+
+@source "../src/**/*.{js,ts,jsx,tsx}";
