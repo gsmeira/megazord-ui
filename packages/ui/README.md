@@ -1,4 +1,4 @@
-# @megazord-ui/ui
+# @megazord/ui
 
 A React UI component library built with TailwindCSS v4 and inspired by shadcn/ui design principles.
 
@@ -14,7 +14,7 @@ A React UI component library built with TailwindCSS v4 and inspired by shadcn/ui
 ## Installation
 
 ```bash
-npm install @megazord-ui/ui
+npm install @megazord/ui
 ```
 
 ## Usage
@@ -22,13 +22,13 @@ npm install @megazord-ui/ui
 Import the styles in your app:
 
 ```tsx
-import '@megazord-ui/ui/styles.css';
+import '@megazord/ui/styles.css';
 ```
 
 Use the components:
 
 ```tsx
-import { Button } from '@megazord-ui/ui';
+import { Button } from '@megazord/ui';
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import {createMDX} from 'fumadocs-mdx/next';
 
 const config = {
   reactStrictMode: true,
-  transpilePackages: ['@megazord-ui/ui'],
+  transpilePackages: ['@megazord/ui'],
 }
 
 const withMDX = createMDX({

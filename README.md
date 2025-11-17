@@ -6,7 +6,7 @@ A modern React UI component library built with TailwindCSS v4 and inspired by sh
 
 This monorepo contains:
 
-- **[@megazord-ui/ui](./packages/ui)** - The core UI component library
+- **[@megazord/ui](./packages/ui)** - The core UI component library
 - **[playground](./apps/playground)** - Next.js app for component documentation and testing
 
 ## ✨ Features
@@ -24,11 +24,11 @@ This monorepo contains:
 ### Installation
 
 ```bash
-pnpm add @megazord-ui/ui
+pnpm add @megazord/ui
 # or
-npm install @megazord-ui/ui
+npm install @megazord/ui
 # or
-yarn add @megazord-ui/ui
+yarn add @megazord/ui
 ```
 
 ### Usage
@@ -36,8 +36,8 @@ yarn add @megazord-ui/ui
 Import the styles and components:
 
 ```tsx
-import '@megazord-ui/ui/styles.css';
-import { Button } from '@megazord-ui/ui';
+import '@megazord/ui/styles.css';
+import { Button } from '@megazord/ui';
 
 function App() {
   return <Button>Click me</Button>;
@@ -55,8 +55,8 @@ function App() {
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/gsmeira/megazord-ui.git
-cd megazord-ui
+git clone https://github.com/gsmeira/megazord.git
+cd megazord
 
 # 2. Use correct Node.js version (if using nvm)
 nvm use
@@ -65,13 +65,13 @@ nvm use
 pnpm install
 
 # 4. Build the UI package (REQUIRED before running playground)
-pnpm --filter @megazord-ui/ui build
+pnpm --filter @megazord/ui build
 
 # 5. Start the playground development server
 pnpm dev
 ```
 
-**Important:** You must build the UI package before running the playground app, otherwise you'll see errors like `Can't resolve '@megazord-ui/ui/styles.css'`.
+**Important:** You must build the UI package before running the playground app, otherwise you'll see errors like `Can't resolve '@megazord/ui/styles.css'`.
 
 For detailed development instructions, troubleshooting, and workflows, see the [Development Guide](./DEVELOPMENT.md).
 
@@ -103,7 +103,7 @@ pnpm fresh
 ### Project Structure
 
 ```
-megazord-ui/
+megazord/
 ├── packages/
 │   └── ui/              # UI component library
 │       ├── src/
@@ -151,7 +151,7 @@ Tests are written using Vitest and React Testing Library:
 pnpm test
 
 # Watch mode in UI package
-pnpm --filter @megazord-ui/ui test:watch
+pnpm --filter @megazord/ui test:watch
 ```
 
 ## 📖 Documentation

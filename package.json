@@ -1,5 +1,5 @@
 {
-  "name": "megazord-ui",
+  "name": "megazord",
   "version": "0.0.1",
   "private": true,
   "description": "A React UI component library with shadcn/ui design",
@@ -10,8 +10,8 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
     "dev": "concurrently \"pnpm run dev:ui\" \"pnpm run dev:playground\"",
     "dev:playground": "pnpm --filter playground run dev",
-    "dev:ui": "pnpm --filter @megazord-ui/ui run dev",
-    "storybook": "pnpm --filter @megazord-ui/ui run storybook",
+    "dev:ui": "pnpm --filter @megazord/ui run dev",
+    "storybook": "pnpm --filter @megazord/ui run storybook",
     "fresh": "rm -rf pnpm-lock.yaml node_modules packages/*/node_modules packages/*/dist apps/*/node_modules apps/*/.next && pnpm install"
   },
   "devDependencies": {

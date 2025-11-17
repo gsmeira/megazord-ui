@@ -1,5 +1,5 @@
 {
-  "name": "@megazord-ui/ui",
+  "name": "@megazord/ui",
   "version": "0.0.1",
   "description": "React UI component library with shadcn/ui design and TailwindCSS v4",
   "type": "module",

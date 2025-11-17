@@ -17,7 +17,7 @@ importers:
 
   apps/playground:
     dependencies:
-      '@megazord-ui/ui':
+      '@megazord/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       fumadocs-core:

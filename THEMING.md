@@ -17,35 +17,35 @@ All colors use the HSL color space format: `hue saturation lightness`
   /* Background & Foreground */
   --color-background: 0 0% 100%;
   --color-foreground: 222.2 84% 4.9%;
-  
+
   /* Card */
   --color-card: 0 0% 100%;
   --color-card-foreground: 222.2 84% 4.9%;
-  
+
   /* Popover */
   --color-popover: 0 0% 100%;
   --color-popover-foreground: 222.2 84% 4.9%;
-  
+
   /* Primary */
   --color-primary: 222.2 47.4% 11.2%;
   --color-primary-foreground: 210 40% 98%;
-  
+
   /* Secondary */
   --color-secondary: 210 40% 96.1%;
   --color-secondary-foreground: 222.2 47.4% 11.2%;
-  
+
   /* Muted */
   --color-muted: 210 40% 96.1%;
   --color-muted-foreground: 215.4 16.3% 46.9%;
-  
+
   /* Accent */
   --color-accent: 210 40% 96.1%;
   --color-accent-foreground: 222.2 47.4% 11.2%;
-  
+
   /* Destructive */
   --color-destructive: 0 84.2% 60.2%;
   --color-destructive-foreground: 210 40% 98%;
-  
+
   /* Borders & Inputs */
   --color-border: 214.3 31.8% 91.4%;
   --color-input: 214.3 31.8% 91.4%;
@@ -74,7 +74,7 @@ All colors use the HSL color space format: `hue saturation lightness`
 Create a CSS file in your project and import it after the Megazord UI styles:
 
 ```css
-@import "@megazord-ui/ui/styles.css";
+@import "@megazord/ui/styles.css";
 
 @theme {
   /* Your custom colors */
@@ -132,21 +132,21 @@ Override the dark mode colors by adding your own `@media` query:
 Here's an example of customizing the theme with your brand colors:
 
 ```css
-@import "@megazord-ui/ui/styles.css";
+@import "@megazord/ui/styles.css";
 
 @theme {
   /* Brand primary color: Blue */
   --color-primary: 220 90% 56%;
   --color-primary-foreground: 0 0% 100%;
-  
+
   /* Brand secondary color: Purple */
   --color-secondary: 280 70% 60%;
   --color-secondary-foreground: 0 0% 100%;
-  
+
   /* Accent color: Orange */
   --color-accent: 30 95% 55%;
   --color-accent-foreground: 0 0% 10%;
-  
+
   /* Rounded corners */
   --radius: 0.75rem;
   --radius-lg: 1rem;

@@ -7,17 +7,6 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
     <DocsLayout
       tree={source.pageTree}
       {...baseOptions()}
-      // nav={{
-      //   title: 'Megazord UI',
-      //   url: '/',
-      // }}
-      // links={[
-      //   {
-      //     text: 'GitHub',
-      //     url: 'https://github.com/gsmeira/megazord-ui',
-      //     active: 'nested-url',
-      //   },
-      // ]}
     >
       {children}
     </DocsLayout>

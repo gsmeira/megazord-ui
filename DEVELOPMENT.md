@@ -19,8 +19,8 @@ Follow these steps to set up the project for the first time:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/gsmeira/megazord-ui.git
-cd megazord-ui
+git clone https://github.com/gsmeira/megazord.git
+cd megazord
 ```
 
 ### 2. Use Correct Node.js Version
@@ -58,7 +58,7 @@ pnpm uses a content-addressable storage system, which means packages are stored 
 **Important:** You must build the UI package before running the playground app.
 
 ```bash
-pnpm --filter @megazord-ui/ui build
+pnpm --filter @megazord/ui build
 ```
 
 Or use the shorthand:
@@ -76,10 +76,10 @@ This creates the `packages/ui/dist` folder with:
 
 **Why is this necessary?**
 
-The playground app imports `@megazord-ui/ui/styles.css` and components from `@megazord-ui/ui`. These imports resolve to the built files in the `dist` folder, not the source files. Without building first, you'll get the error:
+The playground app imports `@megazord/ui/styles.css` and components from `@megazord/ui`. These imports resolve to the built files in the `dist` folder, not the source files. Without building first, you'll get the error:
 
 ```
-Can't resolve '@megazord-ui/ui/styles.css'
+Can't resolve '@megazord/ui/styles.css'
 ```
 
 ### 5. Run the Playground Development Server
@@ -104,7 +104,7 @@ When you make changes to components in `packages/ui/src`:
 
 1. **Rebuild the package:**
    ```bash
-   pnpm --filter @megazord-ui/ui build
+   pnpm --filter @megazord/ui build
    ```
 
 2. **Restart the playground dev server** (Ctrl+C, then `pnpm dev`)
@@ -157,22 +157,22 @@ Run from `packages/ui` directory or use filters:
 
 ```bash
 # Build the library
-pnpm --filter @megazord-ui/ui build
+pnpm --filter @megazord/ui build
 
 # Build in watch mode (auto-rebuild on changes)
-pnpm --filter @megazord-ui/ui dev
+pnpm --filter @megazord/ui dev
 
 # Run tests
-pnpm --filter @megazord-ui/ui test
+pnpm --filter @megazord/ui test
 
 # Run tests in watch mode
-pnpm --filter @megazord-ui/ui test:watch
+pnpm --filter @megazord/ui test:watch
 
 # Start Storybook
-pnpm --filter @megazord-ui/ui storybook
+pnpm --filter @megazord/ui storybook
 
 # Lint the code
-pnpm --filter @megazord-ui/ui lint
+pnpm --filter @megazord/ui lint
 ```
 
 ### Playground App (`apps/playground`)
@@ -195,12 +195,12 @@ pnpm --filter playground lint
 
 ## Common Issues
 
-### Issue: Can't resolve '@megazord-ui/ui/styles.css'
+### Issue: Can't resolve '@megazord/ui/styles.css'
 
 **Solution:** Build the UI package first:
 
 ```bash
-pnpm --filter @megazord-ui/ui build
+pnpm --filter @megazord/ui build
 ```
 
 ### Issue: Changes to UI components not appearing
@@ -208,7 +208,7 @@ pnpm --filter @megazord-ui/ui build
 **Solution:** Rebuild the UI package after making changes:
 
 ```bash
-pnpm --filter @megazord-ui/ui build
+pnpm --filter @megazord/ui build
 # Then restart the dev server
 ```
 
@@ -233,7 +233,7 @@ This tells Tailwind to scan for utility classes in both locations.
 **Solution:** Ensure the UI package is built, as it generates TypeScript declaration files:
 
 ```bash
-pnpm --filter @megazord-ui/ui build
+pnpm --filter @megazord/ui build
 ```
 
 ### Issue: Module not found errors or dependency issues
@@ -254,7 +254,7 @@ This command will:
 After running `pnpm fresh`, remember to rebuild the UI package:
 
 ```bash
-pnpm --filter @megazord-ui/ui build
+pnpm --filter @megazord/ui build
 ```
 
 ## Architecture Notes
@@ -274,7 +274,7 @@ This separation ensures:
 ## Project Structure
 
 ```
-megazord-ui/
+megazord/
 ├── packages/
 │   └── ui/                    # UI component library
 │       ├── src/
@@ -312,10 +312,10 @@ megazord-ui/
 
 ```bash
 # Clone, install, build, and run
-git clone https://github.com/gsmeira/megazord-ui.git
-cd megazord-ui
+git clone https://github.com/gsmeira/megazord.git
+cd megazord
 npm install
-npm run build --workspace=@megazord-ui/ui
+npm run build --workspace=@megazord/ui
 npm run dev
 ```
 
@@ -350,7 +350,7 @@ npm run format    # Format all code
 npm test
 
 # Run tests for UI package only
-npm test --workspace=@megazord-ui/ui
+npm test --workspace=@megazord/ui
 
 # Run tests in watch mode
 cd packages/ui
@@ -395,7 +395,7 @@ This builds:
 
 ```bash
 # UI package only
-npm run build --workspace=@megazord-ui/ui
+npm run build --workspace=@megazord/ui
 
 # Playground only
 npm run build --workspace=playground
@@ -448,20 +448,20 @@ pnpm fresh
 This removes all lockfiles, node_modules, and build artifacts, then reinstalls everything fresh. After running this, remember to rebuild the UI package:
 
 ```bash
-pnpm --filter @megazord-ui/ui build
+pnpm --filter @megazord/ui build
 ```
 
-### pnpm Can't Find @megazord-ui/ui Package
+### pnpm Can't Find @megazord/ui Package
 
 If you see an error like:
 
 ```
-ERR_PNPM_FETCH_404  GET https://registry.npmjs.org/@megazord-ui%2Fui: Not Found - 404
+ERR_PNPM_FETCH_404  GET https://registry.npmjs.org/@megazord%2Fui: Not Found - 404
 ```
 
 This means pnpm is trying to fetch the package from npm registry instead of using the local workspace. This is fixed by using the `workspace:*` protocol in dependencies.
 
-**The fix is already applied** - the playground's `package.json` uses `"@megazord-ui/ui": "workspace:*"` to tell pnpm this is a local workspace package.
+**The fix is already applied** - the playground's `package.json` uses `"@megazord/ui": "workspace:*"` to tell pnpm this is a local workspace package.
 
 If you encounter this error:
 1. Verify the dependency uses `workspace:*` protocol
